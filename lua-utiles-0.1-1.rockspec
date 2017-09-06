@@ -1,4 +1,4 @@
-package = "lua-utiles"
+package = "lua-utils"
 version = "0.1-1"
 source = {
    url = "git://github.com/komainu8/Lua-Utils.git"
