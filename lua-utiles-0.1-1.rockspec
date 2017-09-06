@@ -5,7 +5,7 @@ source = {
 }
 description = {
    homepage = "https://github.com/komainu8/Lua-Utils",
-   maintainer = "Yasuhiro Horimoto <iddqsar888plekww@gmail.com>"
+   maintainer = "Yasuhiro Horimoto <iddqsar888plekww@gmail.com>",
    license = "MIT"
 }
 dependencies = {
