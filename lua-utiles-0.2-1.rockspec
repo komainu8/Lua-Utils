@@ -1,10 +1,10 @@
 package = "lua-utils"
-version = "0.1-1"
+version = "0.2-1"
 source = {
-   url = "git://github.com/komainu8/Lua-Utils.git"
+   url = "git://github.com/komainu8/lua-utils.git"
 }
 description = {
-   homepage = "https://github.com/komainu8/Lua-Utils",
+   homepage = "https://github.com/komainu8/lua-utils",
    maintainer = "Yasuhiro Horimoto <iddqsar888plekww@gmail.com>",
    license = "MIT"
 }
@@ -14,6 +14,7 @@ dependencies = {
 build = {
    type = "builtin",
    modules = {
-      ["utils"] = "utils.lua"
+      ["utils.string"] = "lib/string.lua"
+      ["utils.table"] = "lib/table.lua"
    }
 }

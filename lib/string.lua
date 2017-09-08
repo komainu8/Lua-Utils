@@ -1,13 +1,7 @@
-local utils = {}
+local string = {}
 
-Utils = {}
-function Utils.dump_table(table)
-  for key, value in pairs(table) do
-    print(key, value)
-  end
-end
-
-function Utils.split_text(text, delimiter)
+String = {}
+function String.split(text, delimiter)
   if text.find(text, delimiter) == nil then
     return { text }
   end
@@ -23,7 +17,7 @@ function Utils.split_text(text, delimiter)
   return splited_texts
 end
 
-function Utils.new(self)
+function String.new(self)
   local object = {}
   setmetatable(object, object)
   object.__index = self
