@@ -1,7 +1,7 @@
 local table = {}
 
 Table = {}
-function Table.dump(self)
+function Table.dump(table)
   for key, value in pairs(table) do
     print(key, value)
   end

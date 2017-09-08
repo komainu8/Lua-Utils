@@ -1,4 +1,5 @@
-require ("utils")
+require ("utils.string")
+require ("utils.table")
 
 local table = {1, 2, 3, 4, 5}
 local hash = { id = 0, method = "test"}
@@ -6,9 +7,11 @@ local test = "1,2,3,4,5"
 
 print(type(table))
 print(type(hash))
-local utils = Utils:new()
-utils.dump_table(table)
-utils.dump_table(hash)
+local test_table = Table:new()
+test_table.dump(table)
+test_table.dump(hash)
 
-local rel = utils.split_text(test, ",")
-utils.dump_table(rel)
+local test_str = String:new()
+print(test)
+local rel = test_str.split(test, ",")
+test_table.dump(rel)

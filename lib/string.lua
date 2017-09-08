@@ -1,4 +1,4 @@
-local string = {}
+local libstring = {}
 
 String = {}
 function String.split(text, delimiter)
