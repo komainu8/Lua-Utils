@@ -1,7 +1,6 @@
-local libstring = {}
+local _M = {}
 
-String = {}
-function String.split(text, delimiter)
+function _M.split(text, delimiter)
   if text.find(text, delimiter) == nil then
     return { text }
   end
@@ -17,9 +16,11 @@ function String.split(text, delimiter)
   return splited_texts
 end
 
-function String.new(self)
+function _M.new(self)
   local object = {}
   setmetatable(object, object)
   object.__index = self
   return object
 end
+
+return _M

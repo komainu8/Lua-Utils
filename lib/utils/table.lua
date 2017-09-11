@@ -1,15 +1,16 @@
-local table = {}
+local _M = {}
 
-Table = {}
-function Table.dump(table)
+function _M.dump(table)
   for key, value in pairs(table) do
     print(key, value)
   end
 end
 
-function Table.new(self)
+function _M.new(self)
   local object = {}
   setmetatable(object, object)
   object.__index = self
   return object
 end
+
+return _M
