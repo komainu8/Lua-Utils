@@ -23,12 +23,12 @@ API List:
 
 sample.lua
 ```lua
-require ("utils")
+libtable = require ("utils.table")
 
 local table = {1, 2, 3, 4, 5}
 local hash = { id = 0, method = "test"}
 
-local utils = Utils:new()
+local utils = libtable:new()
 utils.dump_table(table)
 utils.dump_table(hash)
 ```
@@ -50,11 +50,11 @@ id	0
 
 sample.lua
 ```lua
-require ("utils")
+libstr = require ("utils.string")
 
 local test = "1,2,3,4,5"
 
-local utils = Utils:new()
+local utils = libstring:new()
 local rel = utils.split_text(test, ",")
 utils.dump_table(rel)
 ```
