@@ -14,3 +14,10 @@ test_table.dump(hash)
 local test_str = libstr:new()
 local rel = test_str.split(test, ",")
 test_table.dump(rel)
+
+local fd = io.input("./test01.html","r")
+local html = fd:read("*all")
+fd:close()
+
+local lines = test_str.split_lines(html)
+test_table.dump(lines)

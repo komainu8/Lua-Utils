@@ -16,6 +16,16 @@ function _M.split(text, delimiter)
   return splited_texts
 end
 
+function _M.split_lines(text)
+  local lines = {}
+  local function splitter(line)
+    table.insert(lines, line)
+    return ""
+  end
+  text:gsub("(.-\r?\n)", splitter)
+  return lines
+end
+
 function _M.new(self)
   local object = {}
   setmetatable(object, object)
