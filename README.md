@@ -15,7 +15,9 @@ Usage
 API List:
 
 - `table_dump`
+- `table_equal`
 - `split_text`
+- `split_lines`
 
 ### `table_dump`
 
@@ -28,9 +30,9 @@ libtable = require ("utils.table")
 local table = {1, 2, 3, 4, 5}
 local hash = { id = 0, method = "test"}
 
-local utils = libtable:new()
-utils.dump_table(table)
-utils.dump_table(hash)
+local table_utils = libtable:new()
+table_utils.dump(table)
+table_utils.dump(hash)
 ```
 
 ```text
@@ -44,6 +46,28 @@ method	"test"
 id	0
 ```
 
+### `table_equal`
+
+#### Examples
+
+sample.lua
+```lua
+libtable = require ("utils.table")
+
+local table = {1, 2, 3, 4, 5}
+local hash = { id = 0, method = "test"}
+
+local table_utils = libtable:new()
+print(table_utils.equal(table, table))
+print(table_utils.equal(table, hash))
+```
+
+```text
+% lua sample.lua
+true
+false
+```
+
 ### `split_text`
 
 #### Examples
@@ -51,12 +75,15 @@ id	0
 sample.lua
 ```lua
 libstr = require ("utils.string")
+libtable = require ("utils.table")
 
 local test = "1,2,3,4,5"
 
-local utils = libstring:new()
-local rel = utils.split_text(test, ",")
-utils.dump_table(rel)
+local string_utils = libstring:new()
+local table_utils = libtable:new()
+
+local rel = string_utils.split_text(test, ",")
+table_utils.dump_table(rel)
 ```
 
 ```text
@@ -66,6 +93,33 @@ utils.dump_table(rel)
 3	3
 4	4
 5	5
+```
+
+### `split_lines`
+
+#### Examples
+
+sample.lua
+```lua
+libstr = require ("utils.string")
+libtable = require ("utils.table")
+
+local test = [[
+test
+hoge
+]]
+
+local string_utils = libstring:new()
+local table_utils = libtable:new()
+local rel = string_utils.split_lines(test)
+table_utils.dump_table(rel)
+```
+
+```text
+% lua sample.lua
+1	test
+
+2	hoge
 ```
 
 License(MIT)

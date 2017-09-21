@@ -21,3 +21,6 @@ fd:close()
 
 local lines = test_str.split_lines(html)
 test_table.dump(lines)
+
+print(test_table.equal(table, table))
+print(test_table.equal(table, hash))
