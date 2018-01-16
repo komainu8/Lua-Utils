@@ -14,7 +14,7 @@ dependencies = {
 build = {
    type = "builtin",
    modules = {
-      ["utils.string"] = "lib/string.lua",
-      ["utils.table"] = "lib/table.lua"
+      ["utils.string"] = "lib/utils/string.lua",
+      ["utils.table"] = "lib/utils/table.lua"
    }
 }
